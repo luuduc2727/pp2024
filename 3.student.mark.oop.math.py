@@ -12,16 +12,14 @@ class Student:
         self.marks = {}
 
     def input_marks(self, course_id, mark):
-        # Use math.floor to round down to 1-digit decimal
-        self.marks[course_id] = math.floor(float(mark))
+        self.marks[course_id] = mark
 
     def calculate_gpa(self):
         total_credits = 0
         weighted_sum = 0
 
-        for course_id, mark in self.marks.items():
-            # Assuming each course has a credit value, you may need to modify this part
-            credit_value = 3  # Example credit value for each course
+        for course_id, mark in self.marks.items():            
+            credit_value = 3  
             total_credits += credit_value
             weighted_sum += mark * credit_value
 
